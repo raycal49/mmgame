@@ -1,0 +1,11 @@
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\bin\Debug\net8.0\MasterMindApp.deps.json
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\bin\Debug\net8.0\MasterMindApp.dll
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\bin\Debug\net8.0\MasterMindApp.pdb
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\obj\Debug\net8.0\MasterMindApp.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\obj\Debug\net8.0\MasterMindApp.AssemblyInfoInputs.cache
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\obj\Debug\net8.0\MasterMindApp.AssemblyInfo.cs
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\obj\Debug\net8.0\MasterMindApp.csproj.CoreCompileInputs.cache
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\obj\Debug\net8.0\MasterMindApp.dll
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\obj\Debug\net8.0\refint\MasterMindApp.dll
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\obj\Debug\net8.0\MasterMindApp.pdb
+C:\Users\Ray\source\repos\MasterMindApp\MasterMindApp\obj\Debug\net8.0\ref\MasterMindApp.dll

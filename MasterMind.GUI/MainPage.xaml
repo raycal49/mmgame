@@ -1,0 +1,272 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage
+  x:Class="MasterMind.GUI.MainPage"
+  xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+  xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml">
+
+  <Grid>
+    <Grid.RowDefinitions>
+      <RowDefinition Height="auto" />
+      <!--  Row for Guess button at the top  -->
+      <RowDefinition Height="*" />
+      <!--  Scrollable content below the Guess button  -->
+    </Grid.RowDefinitions>
+
+    <Label
+      x:Name="label"
+      Margin="25"
+      FontSize="20"
+      HorizontalOptions="Start" />
+
+    <!--  Guess Button  -->
+    <StackLayout
+      Padding="10"
+      HorizontalOptions="Center"
+      VerticalOptions="Center">
+      <Button
+        BackgroundColor="White"
+        Clicked="OnGuessButtonClicked"
+        CornerRadius="25"
+        HeightRequest="50"
+        HorizontalOptions="Center"
+        Text="Guess"
+        WidthRequest="150" />
+    </StackLayout>
+
+    <Button
+      Margin="10"
+      BackgroundColor="White"
+      Clicked="OnGiveUpButtonClicked"
+      CornerRadius="25"
+      HeightRequest="50"
+      HorizontalOptions="End"
+      Text="Give Up"
+      WidthRequest="150" />
+
+    <ScrollView Grid.Row="1">
+      <Grid>
+        <Grid.ColumnDefinitions>
+          <ColumnDefinition Width="*" />
+          <ColumnDefinition Width="*" />
+        </Grid.ColumnDefinitions>
+
+        <Grid.RowDefinitions>
+          <RowDefinition Height="*" />
+          <RowDefinition Height="*" />
+        </Grid.RowDefinitions>
+
+        <!--  Left Side Buttons  -->
+        <StackLayout Orientation="Vertical">
+          <HorizontalStackLayout
+            Grid.Row="0"
+            Grid.Column="0"
+            Padding="10"
+            HorizontalOptions="Start"
+            Spacing="5"
+            VerticalOptions="Start">
+
+            <Button
+              x:Name="Btn1"
+              BackgroundColor="Red"
+              Clicked="OnColorButtonClicked"
+              CornerRadius="50"
+              HeightRequest="50"
+              HorizontalOptions="Start"
+              SemanticProperties.Hint="Counts the number of times you click"
+              WidthRequest="50" />
+
+            <Button
+              x:Name="Btn2"
+              BackgroundColor="Red"
+              Clicked="OnColorButtonClicked"
+              CornerRadius="50"
+              HeightRequest="50"
+              HorizontalOptions="Start"
+              SemanticProperties.Hint="Counts the number of times you click"
+              WidthRequest="50" />
+
+            <Button
+              x:Name="Btn3"
+              BackgroundColor="Red"
+              Clicked="OnColorButtonClicked"
+              CornerRadius="50"
+              HeightRequest="50"
+              HorizontalOptions="Start"
+              SemanticProperties.Hint="Counts the number of times you click"
+              WidthRequest="50" />
+
+            <Button
+              x:Name="Btn4"
+              BackgroundColor="Red"
+              Clicked="OnColorButtonClicked"
+              CornerRadius="50"
+              HeightRequest="50"
+              HorizontalOptions="Start"
+              SemanticProperties.Hint="Counts the number of times you click"
+              WidthRequest="50" />
+
+            <Button
+              x:Name="Btn5"
+              BackgroundColor="Red"
+              Clicked="OnColorButtonClicked"
+              CornerRadius="50"
+              HeightRequest="50"
+              HorizontalOptions="Start"
+              SemanticProperties.Hint="Counts the number of times you click"
+              WidthRequest="50" />
+
+            <Button
+              x:Name="Btn6"
+              BackgroundColor="Red"
+              Clicked="OnColorButtonClicked"
+              CornerRadius="50"
+              HeightRequest="50"
+              HorizontalOptions="Start"
+              SemanticProperties.Hint="Counts the number of times you click"
+              WidthRequest="50" />
+          </HorizontalStackLayout>
+
+          <!--  Previous Guess Area  -->
+          <ScrollView Grid.Row="0" Grid.Column="0">
+            <StackLayout
+              x:Name="PreviousGuessStack"
+              Padding="10"
+              HorizontalOptions="Start"
+              Orientation="Vertical"
+              Spacing="5"
+              VerticalOptions="Start">
+              <!--  Previous Guess rows will be added here dynamically  -->
+            </StackLayout>
+          </ScrollView>
+        </StackLayout>
+
+        <StackLayout
+          Grid.Row="0"
+          Grid.Column="1"
+          Orientation="Vertical">
+          <!--  Static Grey Feedback Pegs  -->
+          <HorizontalStackLayout
+            Padding="10"
+            HorizontalOptions="Start"
+            Spacing="5"
+            VerticalOptions="Start">
+            <Button
+              BackgroundColor="Gray"
+              CornerRadius="50"
+              HeightRequest="50"
+              IsEnabled="False"
+              WidthRequest="50" />
+
+            <Button
+              BackgroundColor="Gray"
+              CornerRadius="50"
+              HeightRequest="50"
+              IsEnabled="False"
+              WidthRequest="50" />
+
+            <Button
+              BackgroundColor="Gray"
+              CornerRadius="50"
+              HeightRequest="50"
+              IsEnabled="False"
+              WidthRequest="50" />
+
+            <Button
+              BackgroundColor="Gray"
+              CornerRadius="50"
+              HeightRequest="50"
+              IsEnabled="False"
+              WidthRequest="50" />
+
+            <Button
+              BackgroundColor="Gray"
+              CornerRadius="50"
+              HeightRequest="50"
+              IsEnabled="False"
+              WidthRequest="50" />
+
+            <Button
+              BackgroundColor="Gray"
+              CornerRadius="50"
+              HeightRequest="50"
+              IsEnabled="False"
+              WidthRequest="50" />
+          </HorizontalStackLayout>
+
+          <!--  Feedback Area  -->
+          <ScrollView Grid.Row="0" Grid.Column="1">
+            <StackLayout
+              x:Name="FeedbackStack"
+              Padding="10"
+              HorizontalOptions="StartAndExpand"
+              Orientation="Vertical"
+              Spacing="5"
+              VerticalOptions="Start">
+              <!--  Feedback rows will be added here dynamically  -->
+            </StackLayout>
+          </ScrollView>
+        </StackLayout>
+
+      </Grid>
+    </ScrollView>
+
+    <Grid
+      x:Name="GameOverOverlay"
+      Padding="20"
+      BackgroundColor="Black"
+      HorizontalOptions="Center"
+      IsVisible="False"
+      Opacity="0.8"
+      VerticalOptions="Center">
+      <StackLayout
+        HorizontalOptions="Center"
+        Spacing="10"
+        VerticalOptions="Center">
+        <Label
+          FontSize="Large"
+          HorizontalOptions="Center"
+          Text="Game Over"
+          TextColor="White" />
+        <Label
+          FontSize="Medium"
+          HorizontalOptions="Center"
+          Text="The secret colors were"
+          TextColor="White" />
+        <HorizontalStackLayout
+          x:Name="SecretColorsStackLoss"
+          HorizontalOptions="Center"
+          Spacing="10" />
+      </StackLayout>
+    </Grid>
+
+    <Grid
+      x:Name="GameWinOverlay"
+      Padding="20"
+      BackgroundColor="Black"
+      HorizontalOptions="Center"
+      IsVisible="False"
+      Opacity="0.8"
+      VerticalOptions="Center">
+      <StackLayout
+        HorizontalOptions="Center"
+        Spacing="10"
+        VerticalOptions="Center">
+        <Label
+          FontSize="Large"
+          HorizontalOptions="Center"
+          Text="You won!"
+          TextColor="White" />
+        <Label
+          FontSize="Medium"
+          HorizontalOptions="Center"
+          Text="Like you guessed, the secret colors were"
+          TextColor="White" />
+        <HorizontalStackLayout
+          x:Name="SecretColorsStackWon"
+          HorizontalOptions="Center"
+          Spacing="10" />
+      </StackLayout>
+    </Grid>
+  </Grid>
+
+</ContentPage>
